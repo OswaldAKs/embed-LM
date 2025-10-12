@@ -79,6 +79,13 @@ class EmbeddingService:
         except Exception as e:
             raise HTTPException(status_code=500, detail=f"embedding error: {str(e)}")
 
+runtime_env = {
+    "pip": [
+        "transformers",
+        "torch"
+    ]
+}
+
 def deployment_embed(args: Dict[str, str]):
     # This factory is the import target for serveConfigV2
     return EmbeddingService.bind(**args)
