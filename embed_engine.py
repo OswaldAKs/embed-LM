@@ -86,7 +86,9 @@ runtime_env = {
     ]
 }
 
-def deployment_embed(args: Dict[str, str]):
-    # This factory is the import target for serveConfigV2
-    return EmbeddingService.bind(**args)
+# def deployment_embed(args: Dict[str, str]):
+#     # This factory is the import target for serveConfigV2
+#     return EmbeddingService.bind(**args)
+
+deployment_embed = EmbeddingService.bind()
 
